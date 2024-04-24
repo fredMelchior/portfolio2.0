@@ -1,0 +1,30 @@
+@import '../../app.component.scss';
+
+.banner {
+  @include bg-dark-gradient;
+  @include shadow;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include desktop {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  &__right, &__left {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+a {
+  @include button1;
+  margin-top: 40px;
+}

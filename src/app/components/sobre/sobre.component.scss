@@ -1,0 +1,91 @@
+@import '../../app.component.scss';
+
+.about {
+  background-color: $c3;
+
+  &__content {
+    margin: 40px 0;
+    &__processo {
+      &__row {
+        background-color: $c2;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+        display: flex;
+
+        @include mobile {
+          padding: 8px;
+        }
+
+        &__text {
+          padding: 8px 24px;
+          flex: 1;
+
+          @include mobile {
+            padding: 8px;
+          }
+
+
+          & > h3 {
+            color: $c1;
+            font-weight: 700;
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-shadow: 0px 8px 4px rgba($c3, $alpha: .5);
+
+            @include mobile {
+              font-size: 32px;
+            }
+          }
+
+          & > p {
+            letter-spacing: 2px;
+            font-size: 24px;
+            margin-bottom: 32px;
+            font-family: 'Glegoo', serif;
+            color: $white;
+            font-weight: 700;
+
+            @include mobile {
+              font-size: 16px;
+            }
+          }
+
+          & > ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            @include mobile {
+              justify-content: center;
+            }
+
+            & > li {
+              font-size: 24px;
+              font-weight: 600;
+              padding: 8px 24px;
+              border-radius: 16px;
+              background-color: $c1;
+              color: $c3;
+              margin: 24px 0;
+              margin-right: 40px;
+              font-style: italic;
+
+              @include mobile {
+                margin: 16px auto;
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        &__image {
+          border: 2px solid red;
+          width: 640px;
+          height: 400px;
+        }
+      }
+    }
+  }
+}

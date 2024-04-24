@@ -1,0 +1,137 @@
+@import '../../app.component.scss';
+
+.card {
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  min-width: 240px;
+  width: 360px;
+  margin: 24px 8px 36px;
+  @include shadow;
+
+  @include mobile {
+    max-width: 100%;
+    margin: 16px auto;
+  }
+
+  @include tablet {
+    min-width: 560px;
+    max-width: 100%;
+  }
+
+  @include desktop {
+    min-width: 400px;
+    max-width: 100%;
+  }
+
+  // Tag do titulo
+  &__title {
+    position: absolute;
+    z-index: 10;
+    padding: 8px;
+    width: 40%;
+    border-radius: 0 0 8px;
+    @include bg-black;
+    @include shadow;
+  }
+
+  // Container da imagem
+  &__image {
+    width: 360px;
+    height: 360px;
+    overflow-y: hidden;
+
+    @include tablet {
+      min-width: 560px;
+      max-width: 100%;
+    }
+
+    @include desktop {
+      min-width: 400px;
+      max-width: 100%;
+    }
+
+    & > img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      object-position: 50% 0%;
+      position: relative;
+
+      @include tablet {
+        min-width: 560px;
+        max-width: 100%;
+      }
+
+      @include desktop {
+        min-width: 400px;
+        max-width: 100%;
+      }
+    }
+
+    // Escurecimento usando div
+    & .overlay {
+      width: 360px;
+      height: 360px;
+      background-color: rgba($color: #000000, $alpha: .5);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include desktop {
+        min-width: 400px;
+        max-width: 100%;
+      }
+    }
+
+    @keyframes move_overlay {
+      0% {
+        background-color: rgba($color: #000000, $alpha: .3);
+      }
+      50% {
+        background-color: rgba($color: #000000, $alpha: .1);
+      }
+      100% {
+        background-color: rgba($color: #000000, $alpha: .0);
+      }
+    }
+
+    &:hover, &:focus {
+      & .overlay {
+        animation: move_overlay 1.2s ease-in-out forwards;
+      }
+    }
+  }
+
+  // Corpo do card
+  &__body {
+    padding: 16px;
+    @include bg-white;
+
+    & > p {
+      font-size: 18px;
+    }
+
+    // Botao do card
+    & > div {
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px;
+
+      & > a {
+        display: inline-block;
+        margin-top: 64px;
+        // margin-left: 70%;
+        @include button1;
+      }
+    }
+  }
+}
